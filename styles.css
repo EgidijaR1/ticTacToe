@@ -1,0 +1,127 @@
+body {  
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+    color: #4A90E2;
+    font-size: 36px;
+    text-shadow: 1px 1px #110e0e;
+}
+
+#board {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.square {
+    width: 130px;
+    height: 130px;
+    border: 2px solid #4A90E2;
+    background-color: #FFFFFF;
+    font-size: 50px;
+    color: #4A90E2;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.square:hover {
+    background-color: #B3D4FC;
+    cursor: pointer;
+}
+
+
+.winner-screen .overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.winner-screen .message-box {
+    position: absolute;
+    width: 30vw;
+    left: 35vw;
+    top: 35vh;
+    text-align: center;
+    z-index: 11;
+     border: 2px darkgray solid;
+    border-radius: 10px; 
+    background-color: #4A90E2;
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back2.jpg);
+
+    
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.winner-screen .okay-button:focus {
+    border: none;
+}
+
+.message-box .title{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 0;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.message-box .body {
+    margin: 20px 0;
+    font-size: 25px;
+}
+
+.fade-in{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 200ms ease-in-out;
+}
+
+.fade-out{
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s 200ms, opacity 200ms ease-in-out  ;
+}
+
+
+#restartButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 200px;
+    background-color: #4A90E2;
+    border: 2px solid #4A90E2;
+    border-radius: 25px;
+    font-size: 20px;
+    color: #FFFFFF;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#restartButton:hover {
+    background-color: #357ABD;
+    transform: scale(1.05);
+}
+
+.gold {
+    color: #fcec08;
+}

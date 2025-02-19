@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kryžiukų nuliukų žaidimas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="title">
+        <h1>Kryžiukų nuliukų žaidimas</h1>
+    </div>
+    <div id="board">
+        <div class="square" id="square0"></div>
+        <div class="square" id="square1"></div>
+        <div class="square" id="square2"></div>
+        <div class="square" id="square3"></div>
+        <div class="square" id="square4"></div>
+        <div class="square" id="square5"></div>
+        <div class="square" id="square6"></div>
+        <div class="square" id="square7"></div>
+        <div class="square" id="square8"></div>
+    </div>  
+    <div id="endGame">
+        <input type="button" value="Išvalyti" id="restartButton" onclick="restartButton()"/>
+    </div>
+
+    <div class="winner-screen fade-out">
+        <div class="overlay">
+        </div>
+        <div class="message-box">
+            <div class="title">Pabaiga</div>
+            <h2 class="body gold">Žaidėjas X laimėjo!</h2>
+            <input type="button" value="Naujas žaidimas" id="restartButton" onclick="restartButton()"/>
+        </div>
+    </div>
+
+
+    <script src="game.js"></script>
+</body>
+</html>
