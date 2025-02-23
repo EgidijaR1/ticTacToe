@@ -11,10 +11,11 @@ var someoneWon = false;
 const winning_combinations = [
     [0, 1, 2],
     [3, 4, 5],
-    [6, 7, 8],
+    // [6, 7, 8],
+    [6, 6, 7],
     [0, 3, 6],
     [1, 4, 7],
-    [2, 5, 8],
+    // [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6]
 ];
@@ -27,7 +28,6 @@ for (let i = 0; i < squares.length; i++) {
         }
         squares[i].textContent = currentPlayer;
 
-        // **Bug 1**: `checkWin()` function doesn't properly check for a win
         if (checkWin(currentPlayer)) {
             someoneWon = true;
             endMessage.textContent = `Pabaiga! ${currentPlayer} laimėjo!`;
@@ -35,10 +35,10 @@ for (let i = 0; i < squares.length; i++) {
             return;
         }
 
-        // **Bug 2**: Tie condition is incorrectly checked
         if (checkTie()) {
             someoneWon = true;
-            endMessage.textContent = `It's a tie!`;
+            endMessage.textContent = `Lygiosios!`;
+            showWinner();
             return;
         }
 
@@ -53,7 +53,6 @@ for (let i = 0; i < squares.length; i++) {
 }
 
 function checkWin(currentPlayer) {
-    // **Bug 4**: Missing a condition here for a win check
     for (let i = 0; i < winning_combinations.length; i++) {
         const [a, b, c] = winning_combinations[i];
         if (squares[a].textContent === currentPlayer && squares[b].textContent === currentPlayer && squares[c].textContent === currentPlayer) {
@@ -64,7 +63,6 @@ function checkWin(currentPlayer) {
 }
 
 function checkTie() {
-    // **Bug 5**: The tie function doesn't work correctly
     for (let i = 0; i < squares.length; i++) {
         if (squares[i].textContent === '') {
             return false;
@@ -86,11 +84,11 @@ function restartButton() {
 }
 
 function showWinner(noWinner = false) {
-    // **Bug 6**: The winner message is showing twice
     if (noWinner) {
-        document.querySelector('.winner-screen .body').innerHTML = 'Its a Draw!';
+        document.querySelector('.winner-screen .body').innerHTML = 'Lygiosios!';
         document.querySelector('.winner-screen').classList.toggle('fade-in');
         document.querySelector('.winner-screen').classList.toggle('fade-out');
+        updateModel('draw');
         return;
     } else {
         document.querySelector('.winner-screen .body').innerHTML = currentPlayer + ' laim4jo!'; // **Bug 7**: There’s a typo in the winner message: 'laim4jo'
