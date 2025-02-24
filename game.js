@@ -11,11 +11,10 @@ var someoneWon = false;
 const winning_combinations = [
     [0, 1, 2],
     [3, 4, 5],
-    // [6, 7, 8],
-    [6, 6, 7],
+    [6, 7, 8],
     [0, 3, 6],
     [1, 4, 7],
-    // [2, 5, 8],
+    [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6]
 ];
@@ -91,7 +90,7 @@ function showWinner(noWinner = false) {
         updateModel('draw');
         return;
     } else {
-        document.querySelector('.winner-screen .body').innerHTML = currentPlayer + ' laim4jo!'; // **Bug 7**: There’s a typo in the winner message: 'laim4jo'
+        document.querySelector('.winner-screen .body').innerHTML = currentPlayer + ' laimėjo!'; // **Bug 7**: There’s a typo in the winner message: 'laim4jo'
         document.querySelector('.winner-screen').classList.toggle('fade-in');
         document.querySelector('.winner-screen').classList.toggle('fade-out');
         document.querySelector('#score-' + currentPlayer).textContent = Number(document.querySelector('#score-' + currentPlayer).textContent) + 1;
